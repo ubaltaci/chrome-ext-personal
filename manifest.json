@@ -1,0 +1,19 @@
+{
+    "manifest_version": 2,
+    "name": "Personal",
+    "version": "0.1",
+    "description": "",
+    "background": {
+        "scripts": ["background.js"],
+        "persistent": true
+    },
+    "permissions": [
+        "tabs",
+        "activeTab",
+        "webRequest",
+        "webRequestBlocking",
+        "*://*.google.com/maps"
+    ]
+}
+
+
