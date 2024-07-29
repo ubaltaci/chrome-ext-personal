@@ -1,18 +1,19 @@
 {
-    "manifest_version": 2,
+    "manifest_version": 3,
     "name": "Personal",
     "version": "0.1",
     "description": "",
     "background": {
-        "scripts": ["background.js"],
-        "persistent": true
+        "service_worker": "service-worker.js",
+        "type": "module"
     },
     "permissions": [
         "tabs",
         "activeTab",
-        "webRequest",
-        "webRequestBlocking",
-        "*://*.google.com/maps"
+        "webNavigation"
+    ],
+    "host_permissions": [
+        "*://*.google.com/maps*"
     ]
 }
 
