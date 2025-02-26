@@ -15,6 +15,14 @@ chrome.webNavigation.onBeforeNavigate.addListener((details) => {redirect(details
 
 
 function redirect(details) {
+    if (details.transitionType !== "link" &&
+        details.transitionType !== "typed" &&
+        details.transitionType !== "auto_bookmark" &&
+        details.transitionType !== "generated" &&
+        details.transitionType !== "generated"
+    ) {
+        return
+    }
     const currentUrl = details.url;
     const redirectUrl = updateUrlParameter(currentUrl, AUTH_USER_PARAM, "1");
 
